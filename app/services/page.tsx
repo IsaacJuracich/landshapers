@@ -6,9 +6,9 @@ import { Container } from "../components/ui/Container";
 import { SectionHeader } from "../components/ui/SectionHeader";
 import { Card } from "../components/ui/Card";
 import { Button } from "../components/ui/Button";
-import { generateMetadata } from "../lib/seo";
+import { generatePageMetadata } from "../lib/seo";
 
-export const metadata = generateMetadata(
+export const metadata = generatePageMetadata(
   "Services",
   "Comprehensive landscaping services including drainage solutions, erosion control, outdoor living spaces, and landscape styling.",
   "/services"
