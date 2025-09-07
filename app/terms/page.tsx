@@ -2,9 +2,9 @@ import React from "react";
 import { Header } from "../components/sections/Header";
 import { Footer } from "../components/sections/Footer";
 import { Container } from "../components/ui/Container";
-import { generateMetadata } from "../lib/seo";
+import { createPageMetadata } from "../lib/seo";
 
-export const metadata = generateMetadata(
+export const metadata = createPageMetadata(
   "Terms of Service",
   "Terms of service for Landshapers - understand the terms and conditions for our landscaping services.",
   "/terms"

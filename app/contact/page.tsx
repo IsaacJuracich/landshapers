@@ -3,9 +3,9 @@ import { Header } from "../components/sections/Header";
 import { Footer } from "../components/sections/Footer";
 import { ContactForm } from "../components/sections/ContactForm";
 import { Container } from "../components/ui/Container";
-import { generateMetadata } from "../lib/seo";
+import { createPageMetadata } from "../lib/seo";
 
-export const metadata = generateMetadata(
+export const metadata = createPageMetadata(
   "Contact",
   "Get in touch with Landshapers for your landscaping project. Call 608-632-8046 or fill out our contact form for a free consultation.",
   "/contact"

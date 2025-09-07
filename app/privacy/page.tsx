@@ -2,9 +2,9 @@ import React from "react";
 import { Header } from "../components/sections/Header";
 import { Footer } from "../components/sections/Footer";
 import { Container } from "../components/ui/Container";
-import { generateMetadata } from "../lib/seo";
+import { createPageMetadata } from "../lib/seo";
 
-export const metadata = generateMetadata(
+export const metadata = createPageMetadata(
   "Privacy Policy",
   "Privacy policy for Landshapers - learn how we collect, use, and protect your personal information.",
   "/privacy"

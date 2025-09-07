@@ -3,12 +3,11 @@ import Image from "next/image";
 import { Header } from "../components/sections/Header";
 import { Footer } from "../components/sections/Footer";
 import { Container } from "../components/ui/Container";
-import { SectionHeader } from "../components/ui/SectionHeader";
 import { Card } from "../components/ui/Card";
 import { Button } from "../components/ui/Button";
-import { generatePageMetadata } from "../lib/seo";
+import { createPageMetadata } from "../lib/seo";
 
-export const metadata = generatePageMetadata(
+export const metadata = createPageMetadata(
   "Services",
   "Comprehensive landscaping services including drainage solutions, erosion control, outdoor living spaces, and landscape styling.",
   "/services"
