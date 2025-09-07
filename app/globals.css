@@ -1,26 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Landshapers Brand Colors */
+  --evergreen: #1b5e20;
+  --moss: #2e7d32;
+  --lime-accent: #9ccc65;
+  --earth: #6d4c41;
+  --stone: #f5f7f2;
+  --charcoal: #101418;
+
+  --background: var(--stone);
+  --foreground: var(--charcoal);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-evergreen: var(--evergreen);
+  --color-moss: var(--moss);
+  --color-lime-accent: var(--lime-accent);
+  --color-earth: var(--earth);
+  --color-stone: var(--stone);
+  --color-charcoal: var(--charcoal);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Inter", sans-serif;
+    color: var(--charcoal);
+    background-color: var(--stone);
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--lime-accent);
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+  }
+
+  /* Smooth animations with reduced motion support */
+  @media (prefers-reduced-motion: no-preference) {
+    * {
+      transition-duration: 0.2s;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .btn-primary {
+    background-color: var(--evergreen);
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--moss);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(27, 94, 32, 0.2);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--evergreen);
+    border: 2px solid var(--evergreen);
+    padding: 0.875rem 2rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--evergreen);
+    color: white;
+    transform: translateY(-1px);
+  }
+
+  .card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .gradient-text {
+    /* Simple, always visible solution */
+    color: var(--evergreen) !important;
+    font-weight: 700;
+    /* Remove any transparency or gradient effects */
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: var(--evergreen) !important;
+    background-clip: initial !important;
+    /* Ensure visibility */
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Ensure gradient text is never hidden by animations or AOS */
+  [data-aos] .gradient-text,
+  .gradient-text[data-aos] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    color: var(--evergreen) !important;
+  }
 }
