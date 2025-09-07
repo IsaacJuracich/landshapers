@@ -6,25 +6,42 @@ import { Container } from "../ui/Container";
 import { SectionHeader } from "../ui/SectionHeader";
 import { Card } from "../ui/Card";
 
+interface Testimonial {
+  quote: string;
+  author: string;
+  rating: number;
+  timeAgo?: string;
+}
+
 const Testimonials: React.FC = () => {
-  const testimonials = [
+  const testimonials: Testimonial[] = [
     {
       quote:
-        "They fixed a long-standing water problem and gave us a beautiful patio in the process.",
-      author: "Jenna R.",
+        "Had them come out for a mulch, rock and patio job. Luke and Ryan were very professional and gave me an estimate the next day. They had very good pricing, communication and quality of work. Highly recommend if you are looking for a fair priced landscaping company.",
+      author: "Malik Reynolds",
       rating: 5,
+      timeAgo: "5 months ago",
     },
     {
       quote:
-        "Professional plan, meticulous work, and the crew was great with our timeline.",
-      author: "Marcus T.",
+        "Ryan was doing a paver patio next door to us, I asked him for an estimate on a paver walkway to our house that we had been wanting to have redone and a drainage issue on the side of our house. He was very professional, helpful and responsive.",
+      author: "Cj Fox",
       rating: 5,
+      timeAgo: "2 months ago",
     },
     {
       quote:
-        "The only team that actually measured the grade and explained the solution.",
-      author: "Alicia K.",
+        "I called Ryan about having mulch and rock put into our landscape this spring. He quickly responded and helped me through picking out a type of rock that suited my house and surrounding landscape. He gave me a fair price and finished it in a timely matter. Highly suggest calling if you need work done.",
+      author: "Grace Goodin",
       rating: 5,
+      timeAgo: "4 months ago",
+    },
+    {
+      quote:
+        "Called them for a retaining wall quote on the side of my house. Ryan gave me an estimate the next day. Fair pricing and was done in a timely matter.",
+      author: "Porter P",
+      rating: 5,
+      timeAgo: "5 months ago",
     },
   ];
 
@@ -50,7 +67,7 @@ const Testimonials: React.FC = () => {
           subtitle="Real feedback from homeowners who chose Landshapers"
         />
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {testimonials.map((testimonial, index) => (
             <m.div
               key={testimonial.author}
@@ -74,9 +91,12 @@ const Testimonials: React.FC = () => {
                     <p className="font-semibold text-charcoal">
                       {testimonial.author}
                     </p>
-                    <p className="text-sm text-charcoal/60">
-                      Verified Customer
-                    </p>
+                    <p className="text-sm text-charcoal/60">Google Review</p>
+                    {testimonial.timeAgo && (
+                      <p className="text-xs text-charcoal/50">
+                        {testimonial.timeAgo}
+                      </p>
+                    )}
                   </div>
                 </div>
               </Card>

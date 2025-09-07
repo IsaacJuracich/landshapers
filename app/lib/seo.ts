@@ -27,7 +27,7 @@ const defaultConfig: Required<SEOConfig> = {
     "patio design",
   ],
   url: "https://landshapers.com",
-  image: "/images/logo.png",
+  image: "/images/og-image.jpg", // TODO: Create proper 1200x630 social media image
   type: "website",
   locale: "en_US",
 };
