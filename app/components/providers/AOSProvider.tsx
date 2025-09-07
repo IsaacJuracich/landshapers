@@ -24,6 +24,7 @@ export default function AOSProvider({
   useEffect(() => {
     AOS.init({
       duration,
+      // @ts-ignore
       easing,
       once,
       mirror,
