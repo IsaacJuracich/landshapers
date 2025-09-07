@@ -7,7 +7,27 @@ import "aos/dist/aos.css";
 interface AOSProviderProps {
   children: React.ReactNode;
   duration?: number;
-  easing?: string;
+  easing?:
+    | "linear"
+    | "ease"
+    | "ease-in"
+    | "ease-out"
+    | "ease-in-out"
+    | "ease-in-back"
+    | "ease-out-back"
+    | "ease-in-out-back"
+    | "ease-in-sine"
+    | "ease-out-sine"
+    | "ease-in-out-sine"
+    | "ease-in-quad"
+    | "ease-out-quad"
+    | "ease-in-out-quad"
+    | "ease-in-cubic"
+    | "ease-out-cubic"
+    | "ease-in-out-cubic"
+    | "ease-in-quart"
+    | "ease-out-quart"
+    | "ease-in-out-quart";
   once?: boolean;
   mirror?: boolean;
   offset?: number;
@@ -24,7 +44,6 @@ export default function AOSProvider({
   useEffect(() => {
     AOS.init({
       duration,
-      // @ts-ignore
       easing,
       once,
       mirror,
