@@ -12,9 +12,9 @@ import { Footer } from "./components/sections/Footer";
 
 export default function Home() {
   return (
-    <>
+    <div className="no-overflow">
       <Header />
-      <main>
+      <main className="no-overflow">
         <Hero />
         <TrustStrip />
         <About />
@@ -25,6 +25,6 @@ export default function Home() {
         <HomeCTA />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

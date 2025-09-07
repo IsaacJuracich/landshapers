@@ -13,7 +13,7 @@ export const metadata = createPageMetadata(
 
 export default function Contact() {
   return (
-    <>
+    <div className="no-overflow">
       <Header />
       <main>
         {/* Hero Section */}
@@ -123,6 +123,6 @@ export default function Contact() {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

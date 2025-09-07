@@ -8,7 +8,7 @@ import { Button } from "../ui/Button";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-stone via-white to-stone">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-stone via-white to-stone no-overflow">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image

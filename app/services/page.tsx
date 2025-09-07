@@ -118,7 +118,7 @@ const services = [
 
 export default function Services() {
   return (
-    <>
+    <div className="no-overflow">
       <Header />
       <main>
         {/* Hero Section */}
@@ -317,6 +317,6 @@ export default function Services() {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

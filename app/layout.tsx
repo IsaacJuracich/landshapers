@@ -27,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${manrope.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${manrope.variable} antialiased no-overflow`}
+      >
         <MetaPixelProvider
           config={{
             pixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID || "YOUR_PIXEL_ID",
